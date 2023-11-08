@@ -557,7 +557,9 @@ bool CVulkanDevice::createDevice()
 	VkPhysicalDeviceVulkan12Features vulkan12Features = {
 		.sType = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VULKAN_1_2_FEATURES,
 		.pNext = std::exchange(features2.pNext, &vulkan12Features),
+#if 0
 		.uniformAndStorageBuffer8BitAccess = VK_TRUE,
+#endif
 		.shaderFloat16 = m_bSupportsFp16,
 		.scalarBlockLayout = VK_TRUE,
 		.timelineSemaphore = VK_TRUE,
@@ -3291,8 +3293,7 @@ struct BlitPushData_t
 	uint32_t frameId;
 	uint32_t blurRadius;
 
-	uint8_t u_shaderFilter[k_nMaxLayers];
-    uint8_t u_padding[2];
+	uint32_t u_shaderFilter[k_nMaxLayers];
 
     float u_linearToNits; // unset
     float u_nitsToLinear; // unset
@@ -3406,8 +3407,7 @@ struct RcasPushData_t
 	uint32_t u_frameId;
 	uint32_t u_c1;
 
-	uint8_t u_shaderFilter[k_nMaxLayers];
-    uint8_t u_padding[2];
+	uint32_t u_shaderFilter[k_nMaxLayers];
 
     float u_linearToNits; // unset
     float u_nitsToLinear; // unset

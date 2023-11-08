@@ -17,7 +17,7 @@ layout(
 // UVUVUVUVUVUVUVU...
 
 const uint u_frameId = 0;
-const uint8_t u_shaderFilter[VKR_MAX_LAYERS] = { uint8_t(0), uint8_t(0), uint8_t(0), uint8_t(0), uint8_t(0), uint8_t(0) };
+const uint u_shaderFilter[VKR_MAX_LAYERS] = { uint(0), uint(0), uint(0), uint(0), uint(0), uint(0) };
 const float u_linearToNits = 400.0f;
 const float u_nitsToLinear = 1.0f / 100.0f;
 const float u_itmSdrNits = 100.f;
